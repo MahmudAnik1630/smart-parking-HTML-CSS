@@ -21,7 +21,6 @@ header {
     align-items: center;
     padding: 20px;
     background: rgba(0, 0, 0, 0.8);
-    position: fixed;
     width: 100%;
     z-index: 1000;
 }
