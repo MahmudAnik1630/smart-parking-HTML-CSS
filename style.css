@@ -212,6 +212,18 @@ html {
 
 /* Mobile (0-576px) - default styles above are for mobile */
 
+.menuul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.menuul li {
+    margin: 5px; 
+}
+
+
 /* Tablet (577px-920px) */
 @media (min-width: 577px) {
     header {
