@@ -1,9 +1,13 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
+.container{
+    max-width: 100%;
+    width: 100%;
+    margin: 0px auto;
 }
 
 body {
@@ -15,16 +19,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 80px;
+    padding: 20px;
     background: rgba(0, 0, 0, 0.8);
     position: fixed;
     width: 100%;
-    top: 0;
     z-index: 1000;
 }
 
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: gold;
 }
@@ -32,13 +35,13 @@ header {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 1rem;
+    font-size: 0.9rem;
     transition: 0.3s;
 }
 
@@ -49,8 +52,6 @@ nav ul li a:hover, .btn:hover {
 .hero {
     width: 100%;
     height: 100vh;
-    background: url('parking.jpg') no-repeat center center/cover;
-    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -72,23 +73,27 @@ nav ul li a:hover, .btn:hover {
 }
 
 .hero-content {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
     z-index: 10;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     color: gold;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 10px 0 20px;
 }
 
 .btn {
     display: inline-block;
-    padding: 10px 25px;
+    padding: 8px 20px;
     background: gold;
     color: black;
     text-decoration: none;
@@ -101,16 +106,15 @@ nav ul li a:hover, .btn:hover {
     background: white;
 }
 
-
 .grid-section {
-    padding: 50px 80px;
+    padding: 30px 20px;
     background-color: #222;
     text-align: center;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
     justify-content: center;
 }
@@ -135,27 +139,26 @@ nav ul li a:hover, .btn:hover {
 
 .grid-item p {
     margin-top: 10px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #ddd;
 }
 
-
 .contact-form {
-    padding: 50px 80px;
+    padding: 30px 20px;
     background: #111;
     text-align: center;
     border: 1px solid gold;
-    margin: 150px 300px;
+    margin: 50px 20px;
 }
 
 .contact-form h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: gold;
     margin-bottom: 20px;
 }
 
 .contact-form form {
-    max-width: 500px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -192,12 +195,147 @@ nav ul li a:hover, .btn:hover {
     background: white;
 }
 
-
 footer {
-    height: 200px;
+    height: auto;
+    min-height: 100px;
     background: black;
     color: gold;
     text-align: center;
     padding: 20px;
-    font-size: 1rem;
+    font-size: 0.9rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Media queries for responsiveness */
+
+/* Mobile (0-576px) - default styles above are for mobile */
+
+/* Tablet (577px-920px) */
+@media (min-width: 577px) {
+    header {
+        padding: 20px 40px;
+    }
+    
+    .logo {
+        font-size: 1.6rem;
+    }
+    
+    nav ul {
+        gap: 15px;
+    }
+    
+    nav ul li a {
+        font-size: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .grid-section {
+        padding: 40px 40px;
+    }
+    
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-form {
+        margin: 80px 60px;
+        padding: 40px;
+    }
+    
+    .contact-form form {
+        max-width: 80%;
+    }
+}
+
+/* Desktop (921px-1200px) */
+@media (min-width: 921px) {
+    header {
+        padding: 20px 80px;
+    }
+    
+    .logo {
+        font-size: 1.8rem;
+    }
+    
+    nav ul {
+        gap: 20px;
+    }
+    
+    .hero-content {
+        top: 50%;
+        left: 25%;
+        transform: translateY(-50%);
+        width: auto;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .btn {
+        padding: 10px 25px;
+    }
+    
+    .grid-section {
+        padding: 50px 80px;
+    }
+    
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .grid-item p {
+        font-size: 1rem;
+    }
+    
+    .contact-form {
+        margin: 150px 300px;
+        padding: 50px 80px;
+    }
+    
+    .contact-form h2 {
+        font-size: 2rem;
+    }
+    
+    .contact-form form {
+        max-width: 500px;
+    }
+    
+    footer {
+        min-height: 200px;
+        font-size: 1rem;
+    }
+}
+
+/* Mobile menu toggle for small screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    nav ul li a.btn {
+        display: inline-block;
+        padding: 8px 15px;
+    }
 }
